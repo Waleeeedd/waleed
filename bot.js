@@ -24,7 +24,10 @@ client.on('ready', () => {
 
 
 
-const adminprefix = "";
+
+
+
+const adminprefix = "!";
 const devs = ['466237189244715008'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -36,6 +39,18 @@ if (message.content.startsWith(adminprefix + 'st')) {
 });
 
 
+
+
+
+
+
+client.on('guildMemberAdd', member => {
+const YossiF = member.guild.channels.get("501827332592631814");//ايدي الشات
+if(!YossiF) return;
+if(YossiF) {
+YossiF.send(`** Welcome To 4FUN Server :dizzy:**`);          
+}
+});
 
 
 
