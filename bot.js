@@ -44,24 +44,24 @@ if (message.content.startsWith(adminprefix + 'st')) {
 
 
 
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', '4fun');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return; 
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField('' , ` **Welcome To 4FUN Server :dizzy:**, ${member}`)
-   
-              
-               
-              
-    
-        .setTimestamp()
-    
-      channel.sendEmbed(embed);
-    });
+
+         client.on('message', message => {
+            if (message.content === '.') {
+              message.channel.send('كيك');
+
+
+            }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
