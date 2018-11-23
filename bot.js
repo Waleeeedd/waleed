@@ -45,12 +45,24 @@ if (message.content.startsWith(adminprefix + 'st')) {
 
 
 client.on('guildMemberAdd', member => {
-const YossiF = member.guild.channels.get("501827332592631814");//ايدي الشات
-if(!YossiF) return;
-if(YossiF) {
-YossiF.send(`** Welcome To 4FUN Server :dizzy:**`);          
-}
-});
+    let channel = member.guild.channels.find('name', '4fun');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return; 
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
+        .addField('' , ` **Welcome To 4FUN Server :dizzy:**, ${member}`)
+   
+              
+               
+              
+    
+        .setTimestamp()
+    
+      channel.sendEmbed(embed);
+    });
+
 
 
 
